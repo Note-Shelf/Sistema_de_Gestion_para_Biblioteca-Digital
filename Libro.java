@@ -16,24 +16,28 @@ public class Libro {
 
     public boolean validarCampos() {
 
-        int cantidadLetrasIsbn = isbn.length();
-
-        if (cantidadLetrasIsbn == 0) {
-            System.out.println("Error: el ISBN no puede estar vacio.");
+        boolean isbnVacio = Validador.textoEstaVacio(isbn);
+        if (isbnVacio == true) {
+            System.out.println("____________________________________");
+            System.out.println("ERROR: el ISBN no puede estar vacio.");
+            System.out.println("Ejemplo de ISBN: 978-84-376-0494-7");
+            System.out.println("____________________________________");
             return false;
         }
 
-        int cantidadLetrasTitulo = titulo.length();
-
-        if (cantidadLetrasTitulo == 0) {
-            System.out.println("Error: el titulo no puede estar vacio.");
+        boolean tituloVacio = Validador.textoEstaVacio(titulo);
+        if (tituloVacio == true) {
+            System.out.println("____________________________________");
+            System.out.println("ERROR: el titulo no puede estar vacio.");
+            System.out.println("____________________________________");
             return false;
         }
 
-        int cantidadLetrasAutor = autor.length();
-
-        if (cantidadLetrasAutor == 0) {
-            System.out.println("Error: el autor no puede estar vacio.");
+        boolean autorVacio = Validador.textoEstaVacio(autor);
+        if (autorVacio == true) {
+            System.out.println("____________________________________");
+            System.out.println("ERROR: el nombre del autor no puede estar vacio.");
+            System.out.println("____________________________________");
             return false;
         }
 
